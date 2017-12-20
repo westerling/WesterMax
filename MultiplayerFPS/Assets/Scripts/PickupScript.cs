@@ -28,13 +28,11 @@ public class PickupScript : MonoBehaviour {
 
     private IEnumerator Ammo_Coroutine(GameObject _player)
     {
-        Debug.Log("Pickup");
-        //this.gameObject.SetActive(false);
-        this.gameObject.SetActive(false);
-        Debug.Log("böjar vänta");
-        yield return new WaitForSeconds(5);
-        Debug.Log("Väntan över");
-        //this.gameObject.SetActive(true);
+        this.gameObject.GetComponent<Renderer>().enabled = false;
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        yield return new WaitForSeconds(30);
+        this.gameObject.GetComponent<Renderer>().enabled = true;
+        this.gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 
 }
