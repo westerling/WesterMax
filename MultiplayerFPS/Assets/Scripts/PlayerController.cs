@@ -12,9 +12,10 @@ public class PlayerController : MonoBehaviour {
     private float jump_force = 500f;
 
     private float VerticalVelocity;
+    /*
     [SerializeField]
     private float gravity = 14.0f;
-
+    */
     [SerializeField]
     private LayerMask enviromentMask;
 
@@ -22,13 +23,13 @@ public class PlayerController : MonoBehaviour {
 	private PlayerMotor motor;
     private new BoxCollider collider;
     private Animator animator;
-    private CharacterController controller;
+   // private CharacterController controller;
 
 	void Start ()
 	{
 		motor = GetComponent<PlayerMotor>();
 		animator = GetComponent<Animator>();
-        controller = GetComponent<CharacterController>();
+       // controller = GetComponent<CharacterController>();
         collider = GetComponent<BoxCollider>();
 	}
 

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PickupScript : MonoBehaviour {
 
-    private PlayerWeapon currentWeapon;
+   // private PlayerWeapon currentWeapon;
     private WeaponManager weaponManager;
     private const string PLAYER_TAG = "Player";
 
     // Use this for initialization
     void Start () {
         weaponManager = GetComponent<WeaponManager>();
+        //currentWeapon = weaponManager.GetCurrentWeapon();
     }
 	
 	// Update is called once per frame
@@ -28,11 +29,16 @@ public class PickupScript : MonoBehaviour {
 
     private IEnumerator Ammo_Coroutine(GameObject _player)
     {
-        this.gameObject.GetComponent<Renderer>().enabled = false;
-        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+      //  currentWeapon.mags++;
+        DisableOrEnableComponents(false);
         yield return new WaitForSeconds(30);
-        this.gameObject.GetComponent<Renderer>().enabled = true;
-        this.gameObject.GetComponent<BoxCollider>().enabled = true;
+        DisableOrEnableComponents(true);
+    }
+
+    void DisableOrEnableComponents(bool _bool)
+    {
+        this.gameObject.GetComponent<Renderer>().enabled = _bool;
+        this.gameObject.GetComponent<BoxCollider>().enabled = _bool;
     }
 
 }
