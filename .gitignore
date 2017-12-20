@@ -1,3 +1,9 @@
+[Ll]ibrary
+[Tt]emp
+[Bb]uild
+[Bb]uilds
+Assets/AssetStoleTools*
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
