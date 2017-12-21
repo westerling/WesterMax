@@ -1510,7 +1510,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.5
   lookSensitivity: 3
-  gravity: 14
   enviromentMask:
     serializedVersion: 2
     m_Bits: 4096

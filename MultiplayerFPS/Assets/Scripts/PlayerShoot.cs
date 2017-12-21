@@ -6,8 +6,9 @@ using System.Collections;
 public class PlayerShoot : NetworkBehaviour {
 
 	private const string PLAYER_TAG = "Player";
+    private const string PICKUP_TAG = "Pickup";
 
-	[SerializeField]
+    [SerializeField]
 	private Camera cam;
 
 	[SerializeField]
@@ -153,8 +154,7 @@ public class PlayerShoot : NetworkBehaviour {
                 }
             }
 	}
-
-
+    
     [Client]
     void Melee()
     {
@@ -196,6 +196,33 @@ public class PlayerShoot : NetworkBehaviour {
         yield return new WaitForSeconds(currentWeapon.meleeTime);
 
         isMeleeing = false;
+    }
+
+
+
+    void OnTriggerEnter(Collider _pickup)
+    {
+        if (_pickup.tag == PICKUP_TAG)
+        {
+            if (currentWeapon.mags >= currentWeapon.maxMags)
+                return;
+
+            currentWeapon.mags++;
+            StartCoroutine(Ammo_Coroutine(_pickup.gameObject));
+        }
+    }
+
+    private IEnumerator Ammo_Coroutine(GameObject _pickup)
+    {
+        DisableOrEnableComponents(false, _pickup);
+        yield return new WaitForSeconds(30);
+        DisableOrEnableComponents(true, _pickup);
+    }
+
+    void DisableOrEnableComponents(bool _bool, GameObject _pickup)
+    {
+        _pickup.gameObject.GetComponent<Renderer>().enabled = _bool;
+        _pickup.gameObject.GetComponent<BoxCollider>().enabled = _bool;
     }
 
 }

@@ -1,23 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PickupScript : MonoBehaviour {
+[RequireComponent(typeof(WeaponManager))]
+public class PickupScript : NetworkBehaviour {
 
-   // private PlayerWeapon currentWeapon;
+    private PlayerWeapon currentWeapon;
     private WeaponManager weaponManager;
+    private PlayerShoot playerShoot;
+
     private const string PLAYER_TAG = "Player";
 
     // Use this for initialization
     void Start () {
         weaponManager = GetComponent<WeaponManager>();
-        //currentWeapon = weaponManager.GetCurrentWeapon();
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+    /*    currentWeapon = weaponManager.GetCurrentWeapon();
+        Debug.Log(currentWeapon.damage);
+        if (currentWeapon == null)
+            Debug.Log("NULL REFERENTIATIO");
+            */
+    }
 
     void OnTriggerEnter(Collider _other)
     {
@@ -29,7 +37,6 @@ public class PickupScript : MonoBehaviour {
 
     private IEnumerator Ammo_Coroutine(GameObject _player)
     {
-      //  currentWeapon.mags++;
         DisableOrEnableComponents(false);
         yield return new WaitForSeconds(30);
         DisableOrEnableComponents(true);
