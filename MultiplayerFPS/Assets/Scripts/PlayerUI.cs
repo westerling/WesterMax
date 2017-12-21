@@ -19,13 +19,13 @@ public class PlayerUI : MonoBehaviour {
     GameObject scoreBoard;
 
     private Player player;
-    private PlayerController controller;
+    //private PlayerController controller;
     private WeaponManager weaponManager;
 
     public void SetPlayer(Player _player)
     {
         player = _player;
-        controller = player.GetComponent<PlayerController>();
+        //controller = player.GetComponent<PlayerController>();
         weaponManager = player.GetComponent<WeaponManager>();
     }
     

@@ -7,14 +7,14 @@ using UnityEngine.Networking;
 public class PickupScript : NetworkBehaviour {
 
     private PlayerWeapon currentWeapon;
-    private WeaponManager weaponManager;
+    //private WeaponManager weaponManager;
     private PlayerShoot playerShoot;
 
     private const string PLAYER_TAG = "Player";
 
     // Use this for initialization
     void Start () {
-        weaponManager = GetComponent<WeaponManager>();
+      //  weaponManager = GetComponent<WeaponManager>();
 
     }
 	

@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 23000013770191406}
   - component: {fileID: 114000010566934508}
   - component: {fileID: 95722745895467360}
+  - component: {fileID: 114957554403858414}
   m_Layer: 0
   m_Name: rifle
   m_TagString: Untagged
@@ -318,6 +319,34 @@ MonoBehaviour:
     type: 2}
   hitHumanEffectPrefab: {fileID: 1000013977882334, guid: c431a067d04dadb448a5dd4436d6e755,
     type: 2}
+--- !u!114 &114957554403858414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013040046006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e454dba44dc8a4083a6799b794ed0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Ragmonton
+  damage: 35
+  meleeDamage: 48
+  range: 100
+  meleeRange: 1
+  fireRate: 2.1
+  maxMags: 8
+  maxBullets: 6
+  shootEffect: {fileID: 82435826804540116, guid: e4ff114f942eb884fa37f7b23e4f728c,
+    type: 2}
+  meleeEffect: {fileID: 82576677920000972, guid: e4ff114f942eb884fa37f7b23e4f728c,
+    type: 2}
+  bullets: 0
+  mags: 6
+  reloadTime: 2.1
+  meleeTime: 0.5
+  graphics: {fileID: 0}
 --- !u!198 &198000012847253426
 ParticleSystem:
   m_ObjectHideFlags: 1
