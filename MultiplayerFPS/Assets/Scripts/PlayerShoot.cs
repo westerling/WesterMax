@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using System;
 
 [RequireComponent (typeof (WeaponManager))]
 public class PlayerShoot : NetworkBehaviour {
@@ -16,6 +17,9 @@ public class PlayerShoot : NetworkBehaviour {
 
 	private PlayerWeapon currentWeapon;
 	private WeaponManager weaponManager;
+    private SoundScript soundScript;
+
+    private System.Random rnd = new System.Random();
 
     private bool isMeleeing = false;
 
@@ -28,6 +32,7 @@ public class PlayerShoot : NetworkBehaviour {
 		}
 
 		weaponManager = GetComponent<WeaponManager>();
+        soundScript = GetComponent<SoundScript>();
 	}
 
 	void Update ()
@@ -111,7 +116,8 @@ public class PlayerShoot : NetworkBehaviour {
             _hitEffect = (GameObject)Instantiate(weaponManager.GetCurrentGraphics().hitEffectPrefab, _pos, Quaternion.LookRotation(_normal));
         }
         if (!shot)
-            currentWeapon.meleeEffect.Play();
+            soundScript.playSound(4);
+//        soundScript.playSound(rnd.Next(0, 2));
 
         Destroy(_hitEffect, 2f);
     }
@@ -132,7 +138,8 @@ public class PlayerShoot : NetworkBehaviour {
         currentWeapon.bullets--;
 
         //call onshoot on server
-            currentWeapon.shootEffect.Play();
+        //    currentWeapon.shootEffect.Play();
+            soundScript.playSound(3);
             CmdOnShoot();
         
 
@@ -162,7 +169,7 @@ public class PlayerShoot : NetworkBehaviour {
         {
             return;
         }
-
+        soundScript.playSound(rnd.Next(0, 2));
         //call onshoot on server
         StartCoroutine(Melee_Coroutine());
         RaycastHit _hit;

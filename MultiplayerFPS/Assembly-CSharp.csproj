@@ -100,6 +100,7 @@
      <Compile Include="Assets\Scripts\WeaponGraphics.cs" />
      <Compile Include="Assets\Scripts\WeaponInfoScript.cs" />
      <Compile Include="Assets\Scripts\WeaponManager.cs" />
+     <Compile Include="Assets\SoundScript.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
