@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e454dba44dc8a4083a6799b794ed0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Ragmonton
+  name: Westerton
   damage: 35
   meleeDamage: 48
   range: 100
@@ -338,6 +338,7 @@ MonoBehaviour:
   fireRate: 2.1
   maxMags: 8
   maxBullets: 6
+  weaponID: 1
   shootEffect: {fileID: 82435826804540116, guid: e4ff114f942eb884fa37f7b23e4f728c,
     type: 2}
   meleeEffect: {fileID: 82576677920000972, guid: e4ff114f942eb884fa37f7b23e4f728c,

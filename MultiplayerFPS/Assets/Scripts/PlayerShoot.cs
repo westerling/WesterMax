@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 [RequireComponent (typeof (WeaponManager))]
@@ -18,6 +19,8 @@ public class PlayerShoot : NetworkBehaviour {
 	private PlayerWeapon currentWeapon;
 	private WeaponManager weaponManager;
     private SoundScript soundScript;
+
+    private AudioClip audioClip;
 
     private System.Random rnd = new System.Random();
 
@@ -138,8 +141,13 @@ public class PlayerShoot : NetworkBehaviour {
         currentWeapon.bullets--;
 
         //call onshoot on server
-        //    currentWeapon.shootEffect.Play();
-            soundScript.playSound(3);
+           // soundScript.playSound(3);
+           
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = weaponManager.GetCurrentAudioClip(2);
+            audio.Play();
+        
+        weaponManager.GetCurrentGraphics().muzzleFlash.Play();
             CmdOnShoot();
         
 
@@ -169,7 +177,11 @@ public class PlayerShoot : NetworkBehaviour {
         {
             return;
         }
-        soundScript.playSound(rnd.Next(0, 2));
+        /*soundScript.playSound(rnd.Next(0, 2));*/
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = weaponManager.GetCurrentAudioClip(rnd.Next(0, 1));
+        audio.Play();
+
         //call onshoot on server
         StartCoroutine(Melee_Coroutine());
         RaycastHit _hit;
@@ -205,8 +217,16 @@ public class PlayerShoot : NetworkBehaviour {
         isMeleeing = false;
     }
 
+    bool magCheck()
+    {
+        if (currentWeapon.mags >= currentWeapon.maxMags)
+            return false;
+        else
+            currentWeapon.mags++;
+        return true;    
+    }
 
-
+    /*
     void OnTriggerEnter(Collider _pickup)
     {
         if (_pickup.tag == PICKUP_TAG)
@@ -231,5 +251,5 @@ public class PlayerShoot : NetworkBehaviour {
         _pickup.gameObject.GetComponent<Renderer>().enabled = _bool;
         _pickup.gameObject.GetComponent<BoxCollider>().enabled = _bool;
     }
-
+    */
 }

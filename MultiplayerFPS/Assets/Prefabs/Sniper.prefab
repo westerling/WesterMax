@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e454dba44dc8a4083a6799b794ed0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: JW Model-98
+  name: JW Model-91
   damage: 78
   meleeDamage: 40
   range: 200
@@ -210,6 +210,7 @@ MonoBehaviour:
   fireRate: 8
   maxMags: 16
   maxBullets: 1
+  weaponID: 0
   shootEffect: {fileID: 0}
   meleeEffect: {fileID: 0}
   bullets: 0

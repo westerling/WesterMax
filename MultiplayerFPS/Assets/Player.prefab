@@ -1536,6 +1536,7 @@ MonoBehaviour:
     fireRate: 2.1
     maxMags: 8
     maxBullets: 6
+    weaponID: 1
     shootEffect: {fileID: 82435826804540116}
     meleeEffect: {fileID: 82576677920000972}
     bullets: 20
@@ -1543,6 +1544,61 @@ MonoBehaviour:
     reloadTime: 2.1
     meleeTime: 0.5
     graphics: {fileID: 1000013040046006, guid: 4efc91e45abe3e0409ad1a9e7f64d7fb, type: 2}
+  playerUI: {fileID: 1160206637825454, guid: b135717c33bc8f64e8f5fc0953c22a7c, type: 2}
+  weaponsList:
+  - name: Westerton
+    damage: 35
+    meleeDamage: 48
+    range: 100
+    meleeRange: 1
+    fireRate: 2.1
+    maxMags: 8
+    maxBullets: 6
+    weaponID: 1
+    shootEffect: {fileID: 0}
+    meleeEffect: {fileID: 0}
+    bullets: 0
+    mags: 6
+    reloadTime: 2.1
+    meleeTime: 0.5
+    graphics: {fileID: 0}
+  - name: Milian-2
+    damage: 90
+    meleeDamage: 31
+    range: 15
+    meleeRange: 1
+    fireRate: 4
+    maxMags: 2
+    maxBullets: 8
+    weaponID: 2
+    shootEffect: {fileID: 0}
+    meleeEffect: {fileID: 0}
+    bullets: 0
+    mags: 2
+    reloadTime: 4
+    meleeTime: 0.5
+    graphics: {fileID: 0}
+  - name: 
+    damage: 0
+    meleeDamage: 0
+    range: 0
+    meleeRange: 0
+    fireRate: 0
+    maxMags: 0
+    maxBullets: 0
+    weaponID: 0
+    shootEffect: {fileID: 0}
+    meleeEffect: {fileID: 0}
+    bullets: 0
+    mags: 0
+    reloadTime: 0
+    meleeTime: 0
+    graphics: {fileID: 0}
+  audioClip:
+  - {fileID: 8300000, guid: 245bf977415c3bb409a65eadfd9d2144, type: 3}
+  - {fileID: 8300000, guid: 8c6fd6d63d7beb34b92f5423b18242f6, type: 3}
+  - {fileID: 8300000, guid: 246e0ab68ddcf014c8c6405320ce7e0e, type: 3}
+  - {fileID: 8300000, guid: a2b4d698afdb43848832943995269502, type: 3}
   isReloading: 0
   isMeleeing: 0
 --- !u!114 &114000011208536972

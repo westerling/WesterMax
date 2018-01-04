@@ -9,43 +9,43 @@ public class PickupScript : NetworkBehaviour {
     private PlayerWeapon currentWeapon;
     //private WeaponManager weaponManager;
     private PlayerShoot playerShoot;
+    private WeaponManager weaponManager;
+
+    private bool playerPickup = false;
+
+    private WeaponInfoScript weaponInfo;
 
     private const string PLAYER_TAG = "Player";
+    private const string PICKUP_TAG = "Pickup";
 
-    // Use this for initialization
-    void Start () {
-      //  weaponManager = GetComponent<WeaponManager>();
-
-    }
-	
-	// Update is called once per frame
-	void Update () {
-    /*    currentWeapon = weaponManager.GetCurrentWeapon();
-        Debug.Log(currentWeapon.damage);
-        if (currentWeapon == null)
-            Debug.Log("NULL REFERENTIATIO");
-            */
-    }
-
-    void OnTriggerEnter(Collider _other)
+    void Update()
     {
-        if (_other.tag == PLAYER_TAG)
+        currentWeapon = weaponManager.GetCurrentWeapon();
+    }
+
+    void OnTriggerEnter(Collider _pickup)
+    {
+        if (_pickup.tag == PICKUP_TAG)
         {
-            StartCoroutine(Ammo_Coroutine(_other.gameObject));
+            if (currentWeapon.mags >= currentWeapon.maxMags)
+                return;
+
+            currentWeapon.mags++;
+            StartCoroutine(Ammo_Coroutine(_pickup.gameObject));
         }
     }
 
-    private IEnumerator Ammo_Coroutine(GameObject _player)
+    private IEnumerator Ammo_Coroutine(GameObject _pickup)
     {
-        DisableOrEnableComponents(false);
+        DisableOrEnableComponents(false, _pickup);
         yield return new WaitForSeconds(30);
-        DisableOrEnableComponents(true);
+        DisableOrEnableComponents(true, _pickup);
     }
 
-    void DisableOrEnableComponents(bool _bool)
+    void DisableOrEnableComponents(bool _bool, GameObject _pickup)
     {
-        this.gameObject.GetComponent<Renderer>().enabled = _bool;
-        this.gameObject.GetComponent<BoxCollider>().enabled = _bool;
+        _pickup.gameObject.GetComponent<Renderer>().enabled = _bool;
+        _pickup.gameObject.GetComponent<BoxCollider>().enabled = _bool;
     }
 
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour {
@@ -16,6 +17,9 @@ public class PlayerUI : MonoBehaviour {
     Text magText;
 
     [SerializeField]
+    Text pickupText;
+
+    [SerializeField]
     GameObject scoreBoard;
 
     private Player player;
@@ -31,6 +35,7 @@ public class PlayerUI : MonoBehaviour {
     
     void Start()
     {
+        pickupText.text = "";
         PauseMenu.IsOn = false;
     }
 
@@ -51,6 +56,12 @@ public class PlayerUI : MonoBehaviour {
         {
             scoreBoard.SetActive(false);
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SetPickupLine("Budnerbleus");
+        }
+
     }
 
    public void TogglePauseMenu()
@@ -69,5 +80,19 @@ public class PlayerUI : MonoBehaviour {
     {
         ammoText.text = _ammoAmount.ToString();
         magText.text = _magAmount.ToString();
+    }
+
+    void SetPickupLine(string _string)
+    {
+        StartCoroutine(Pickup_Coroutine(_string));
+    }
+
+    private IEnumerator Pickup_Coroutine(string _string)
+    {
+        pickupText.text = "Pick up " + _string;
+
+        yield return new WaitForSeconds(2);
+
+        pickupText.text = "";
     }
 }

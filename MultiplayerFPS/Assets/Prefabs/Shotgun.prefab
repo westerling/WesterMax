@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e454dba44dc8a4083a6799b794ed0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Spaz-8
+  name: Milian-2
   damage: 90
   meleeDamage: 31
   range: 15
@@ -210,8 +210,7 @@ MonoBehaviour:
   fireRate: 4
   maxMags: 2
   maxBullets: 8
-  shootEffect: {fileID: 0}
-  meleeEffect: {fileID: 0}
+  weaponID: 2
   bullets: 0
   mags: 2
   reloadTime: 4

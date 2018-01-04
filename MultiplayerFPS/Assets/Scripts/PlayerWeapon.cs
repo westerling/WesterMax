@@ -5,7 +5,6 @@ using System.Collections;
 public class PlayerWeapon {
 
 	public string name;
-
 	public int damage;
     public int meleeDamage;
 	public float range;
@@ -13,6 +12,7 @@ public class PlayerWeapon {
 	public float fireRate;
     public int maxMags;
     public int maxBullets;
+    public int weaponID;
     public AudioSource shootEffect;
     public AudioSource meleeEffect;
 

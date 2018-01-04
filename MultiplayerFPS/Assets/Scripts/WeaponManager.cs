@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using UnityEngine.UI;
 
 public class WeaponManager : NetworkBehaviour {
 
@@ -13,10 +14,19 @@ public class WeaponManager : NetworkBehaviour {
 	[SerializeField]
 	private PlayerWeapon primaryWeapon;
 
-	private PlayerWeapon currentWeapon; 
+    [SerializeField]
+    GameObject playerUI;
+
+    [SerializeField]
+    PlayerWeapon[] weaponsList;
+
+    public AudioClip[] audioClip;
+
+    private PlayerWeapon currentWeapon;
+    private WeaponInfoScript pickupWeapon;
     private WeaponGraphics currentGraphics;
-    private AudioSource currentShootSound;
-    private AudioSource currentMeleeSound;
+
+    private const string PICKUP_TAG = "Pickup";
 
     public bool isReloading = false;
     public bool isMeleeing = false;
@@ -26,6 +36,7 @@ public class WeaponManager : NetworkBehaviour {
 		EquipWeapon(primaryWeapon);
         primaryWeapon.bullets = primaryWeapon.maxBullets;
         primaryWeapon.mags = primaryWeapon.maxMags;
+        playerUI.GetComponents<Text>();
     }
 
 	public PlayerWeapon GetCurrentWeapon ()
@@ -38,6 +49,10 @@ public class WeaponManager : NetworkBehaviour {
         return currentGraphics;
     }
 
+    public AudioClip GetCurrentAudioClip(int clip)
+    {
+        return audioClip[clip];
+    }
 
     void EquipWeapon (PlayerWeapon _weapon)
 	{
@@ -133,4 +148,53 @@ public class WeaponManager : NetworkBehaviour {
             anim.SetTrigger("Reload");
         }
     }
+
+    void OnTriggerEnter(Collider _pickup)
+    {
+        pickupWeapon = _pickup.GetComponent<WeaponInfoScript>();
+        if (_pickup.tag == PICKUP_TAG)
+        {
+            Debug.Log("Pickup har ID " + pickupWeapon.weaponID + " och vapnet på hand har ID " + currentWeapon.weaponID);
+            if (pickupWeapon.weaponID == currentWeapon.weaponID)
+            {
+                if (currentWeapon.mags >= currentWeapon.maxMags)
+                    return;
+
+                currentWeapon.mags = currentWeapon.maxMags;
+                StartCoroutine(Ammo_Coroutine(_pickup.gameObject));
+            }
+            else
+            {
+                FindCorrectID(pickupWeapon);
+            }
+        }
+    }
+
+    void FindCorrectID(WeaponInfoScript _pickup)
+    {
+        Debug.Log("Upplockade pickadollen har annan id");
+        for (int i = weaponsList.Length; i < weaponsList.Length; i++)
+        {
+            Debug.Log(weaponsList[i].name + " har id " + weaponsList[i].weaponID);
+            if (weaponsList[i].weaponID == _pickup.weaponID)
+            {
+                Debug.Log("The correct weapon is actually" + weaponsList[i].name);
+            }
+        }
+    }
+
+    private IEnumerator Ammo_Coroutine(GameObject _pickup)
+    {
+        DisableOrEnableComponents(false, _pickup);
+        yield return new WaitForSeconds(30);
+        DisableOrEnableComponents(true, _pickup);
+    }
+
+    void DisableOrEnableComponents(bool _bool, GameObject _pickup)
+    {
+        _pickup.gameObject.GetComponent<Renderer>().enabled = _bool;
+        _pickup.gameObject.GetComponent<BoxCollider>().enabled = _bool;
+    }
+
+
 }

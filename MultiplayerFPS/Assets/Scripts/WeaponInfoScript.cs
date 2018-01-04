@@ -12,8 +12,9 @@ public class WeaponInfoScript : MonoBehaviour{
     public float fireRate;
     public int maxMags;
     public int maxBullets;
-    public AudioSource shootEffect;
-    public AudioSource meleeEffect;
+    public int weaponID;
+//    public AudioSource shootEffect;
+//    public AudioSource meleeEffect;
 
     [HideInInspector]
     public int bullets;
