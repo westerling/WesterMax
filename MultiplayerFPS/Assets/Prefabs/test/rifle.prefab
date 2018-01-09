@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114957554403858414}
   m_Layer: 0
   m_Name: rifle
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,8 +102,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013040046006}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 38.105, y: 5.165, z: 0.13999999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.10000058, y: 0.10000039, z: 0.10000039}
   m_Children:
   - {fileID: 4000011906211472}
@@ -339,10 +339,6 @@ MonoBehaviour:
   maxMags: 8
   maxBullets: 6
   weaponID: 1
-  shootEffect: {fileID: 82435826804540116, guid: e4ff114f942eb884fa37f7b23e4f728c,
-    type: 2}
-  meleeEffect: {fileID: 82576677920000972, guid: e4ff114f942eb884fa37f7b23e4f728c,
-    type: 2}
   bullets: 0
   mags: 6
   reloadTime: 2.1

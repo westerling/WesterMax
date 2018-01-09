@@ -27,6 +27,7 @@ public class WeaponManager : NetworkBehaviour {
     private WeaponGraphics currentGraphics;
 
     private const string PICKUP_TAG = "Pickup";
+    private const string WEAPON_TAG = "Weapon";
 
     public bool isReloading = false;
     public bool isMeleeing = false;
@@ -56,6 +57,9 @@ public class WeaponManager : NetworkBehaviour {
 
     void EquipWeapon (PlayerWeapon _weapon)
 	{
+        if (currentWeapon != null)
+            UnequipWeapon();
+
 		currentWeapon = _weapon;
 
 		GameObject _weaponIns = (GameObject)Instantiate(_weapon.graphics, weaponHolder.position, weaponHolder.rotation);
@@ -70,8 +74,16 @@ public class WeaponManager : NetworkBehaviour {
 
         if (isLocalPlayer)
             Util.SetLayerRecursively(_weaponIns, LayerMask.NameToLayer(weaponLayerName));
-
 	}
+
+    void UnequipWeapon()
+    {
+        foreach (Transform child in weaponHolder)
+        {
+            if (child.tag == WEAPON_TAG)
+                Destroy(child.gameObject);
+        }
+    }
 
     public void Melee()
     {
@@ -154,7 +166,7 @@ public class WeaponManager : NetworkBehaviour {
         pickupWeapon = _pickup.GetComponent<WeaponInfoScript>();
         if (_pickup.tag == PICKUP_TAG)
         {
-            Debug.Log("Pickup har ID " + pickupWeapon.weaponID + " och vapnet på hand har ID " + currentWeapon.weaponID);
+            Debug.Log("Pickup har ID " + pickupWeapon.weaponID + " och vapnet pa hand har ID " + currentWeapon.weaponID);
             if (pickupWeapon.weaponID == currentWeapon.weaponID)
             {
                 if (currentWeapon.mags >= currentWeapon.maxMags)
@@ -165,6 +177,7 @@ public class WeaponManager : NetworkBehaviour {
             }
             else
             {
+                Debug.Log("Gar alternativ vag");
                 FindCorrectID(pickupWeapon);
             }
         }
@@ -172,13 +185,12 @@ public class WeaponManager : NetworkBehaviour {
 
     void FindCorrectID(WeaponInfoScript _pickup)
     {
-        Debug.Log("Upplockade pickadollen har annan id");
-        for (int i = weaponsList.Length; i < weaponsList.Length; i++)
-        {
-            Debug.Log(weaponsList[i].name + " har id " + weaponsList[i].weaponID);
+        for (int i = 0; i < weaponsList.Length; i++)
+        {    
             if (weaponsList[i].weaponID == _pickup.weaponID)
             {
-                Debug.Log("The correct weapon is actually" + weaponsList[i].name);
+                Debug.Log("The weapon lying on the ground is " + weaponsList[i].name);
+                EquipWeapon(weaponsList[i]);
             }
         }
     }

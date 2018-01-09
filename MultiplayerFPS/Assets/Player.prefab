@@ -1561,7 +1561,7 @@ MonoBehaviour:
     mags: 6
     reloadTime: 2.1
     meleeTime: 0.5
-    graphics: {fileID: 0}
+    graphics: {fileID: 1000013040046006, guid: 4efc91e45abe3e0409ad1a9e7f64d7fb, type: 2}
   - name: Milian-2
     damage: 90
     meleeDamage: 31
@@ -1577,23 +1577,23 @@ MonoBehaviour:
     mags: 2
     reloadTime: 4
     meleeTime: 0.5
-    graphics: {fileID: 0}
-  - name: 
-    damage: 0
-    meleeDamage: 0
-    range: 0
-    meleeRange: 0
-    fireRate: 0
-    maxMags: 0
-    maxBullets: 0
-    weaponID: 0
+    graphics: {fileID: 1000011055358402, guid: 1cc8f1ece1118b542abfe41001a80945, type: 2}
+  - name: JW Model-91
+    damage: 78
+    meleeDamage: 40
+    range: 200
+    meleeRange: 1.5
+    fireRate: 8
+    maxMags: 16
+    maxBullets: 1
+    weaponID: 3
     shootEffect: {fileID: 0}
     meleeEffect: {fileID: 0}
     bullets: 0
-    mags: 0
-    reloadTime: 0
-    meleeTime: 0
-    graphics: {fileID: 0}
+    mags: 1
+    reloadTime: 2.1
+    meleeTime: 0.5
+    graphics: {fileID: 1000011829974120, guid: 9f09622c3363f8b45ba20a0b60661a8c, type: 2}
   audioClip:
   - {fileID: 8300000, guid: 245bf977415c3bb409a65eadfd9d2144, type: 3}
   - {fileID: 8300000, guid: 8c6fd6d63d7beb34b92f5423b18242f6, type: 3}

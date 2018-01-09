@@ -132,10 +132,6 @@ MonoBehaviour:
   maxMags: 8
   maxBullets: 6
   weaponID: 1
-  shootEffect: {fileID: 82435826804540116, guid: e4ff114f942eb884fa37f7b23e4f728c,
-    type: 2}
-  meleeEffect: {fileID: 82576677920000972, guid: e4ff114f942eb884fa37f7b23e4f728c,
-    type: 2}
   bullets: 0
   mags: 6
   reloadTime: 2.1

@@ -44,44 +44,48 @@ public class PlayerShoot : NetworkBehaviour {
 
         if (PauseMenu.IsOn)
             return;
-
-        if(currentWeapon.bullets < currentWeapon.maxBullets && currentWeapon.mags > 0)
+        if(currentWeapon != null)
         {
-            if (Input.GetButtonDown("Reload"))
+            if(currentWeapon.bullets < currentWeapon.maxBullets && currentWeapon.mags > 0)
             {
-                weaponManager.Reload();
-                return;
+                if (Input.GetButtonDown("Reload"))
+                {
+                    weaponManager.Reload();
+                    return;
+                }
             }
         }
 
-        if(Input.GetButtonDown("Melee"))
+        if (Input.GetButtonDown("Melee"))
         {
             weaponManager.Melee();
             Melee();
             return;
         }
 
-
-		if (currentWeapon.fireRate <= 0f)
-		{
-			if (Input.GetButtonDown("Fire1"))
-			{
-                Shoot();
-			}
-		} else
-		{
-			if (Input.GetButtonDown("Fire1"))
-			{
-                if (currentWeapon.bullets > 0)
-                {
-                    InvokeRepeating("Shoot", 0f, 1f / currentWeapon.fireRate);
-                }
-			} else if (Input.GetButtonUp ("Fire1"))
-			{
-				CancelInvoke("Shoot");
-			}
-		}
-	}
+        if(currentWeapon != null)
+           {     
+	    	if (currentWeapon.fireRate <= 0f)
+	    	{
+		    	if (Input.GetButtonDown("Fire1"))
+			    {
+                    Shoot();
+			    }
+		    } else
+		    {
+			    if (Input.GetButtonDown("Fire1"))
+		    	{
+                    if (currentWeapon.bullets > 0)
+                    {
+                        InvokeRepeating("Shoot", 0f, 1f / currentWeapon.fireRate);
+                    }
+		    	} else if (Input.GetButtonUp ("Fire1"))
+	    		{
+				    CancelInvoke("Shoot");
+			    }
+		    }
+        }
+    }
 
     //called on server when player shoot
     [Command]
