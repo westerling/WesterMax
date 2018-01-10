@@ -44,6 +44,7 @@ public class PlayerUI : MonoBehaviour {
         SetHealthAmount(player.GetHealthPct());
         SetAmmoAmount(weaponManager.GetCurrentWeapon().bullets, weaponManager.GetCurrentWeapon().mags);
 
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePauseMenu();
@@ -57,11 +58,11 @@ public class PlayerUI : MonoBehaviour {
             scoreBoard.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (weaponManager.globalActivating)
         {
-            SetPickupLine("Budnerbleus");
+            PlayerWeapon playerWeapon = weaponManager.GetCurrentWeapon();
+            SetPickupLine(playerWeapon.name);
         }
-
     }
 
    public void TogglePauseMenu()
@@ -89,7 +90,7 @@ public class PlayerUI : MonoBehaviour {
 
     private IEnumerator Pickup_Coroutine(string _string)
     {
-        pickupText.text = "Pick up " + _string;
+        pickupText.text = "Picked up " + _string;
 
         yield return new WaitForSeconds(2);
 

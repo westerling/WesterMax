@@ -11,8 +11,8 @@ public class WeaponManager : NetworkBehaviour {
 	[SerializeField]
 	private Transform weaponHolder;
 
-	[SerializeField]
-	private PlayerWeapon primaryWeapon;
+	//[SerializeField]
+	//private PlayerWeapon primaryWeapon;
 
     [SerializeField]
     GameObject playerUI;
@@ -31,13 +31,30 @@ public class WeaponManager : NetworkBehaviour {
 
     public bool isReloading = false;
     public bool isMeleeing = false;
+    public bool isActivating = false;
+    public bool globalActivating = false;
 
 	void Start ()
 	{
-		EquipWeapon(primaryWeapon);
-        primaryWeapon.bullets = primaryWeapon.maxBullets;
-        primaryWeapon.mags = primaryWeapon.maxMags;
+		EquipWeapon(weaponsList[0]);
         playerUI.GetComponents<Text>();
+    }
+
+    void Update()
+    {
+        if (Input.GetButton("Activate"))
+        {
+            isActivating = true;
+        }
+        if (Input.GetButtonUp("Activate"))
+        {
+            isActivating = false;
+        }
+    }
+
+    void LateUpdate()
+    {
+        globalActivating = false;
     }
 
 	public PlayerWeapon GetCurrentWeapon ()
@@ -70,11 +87,14 @@ public class WeaponManager : NetworkBehaviour {
         {
             Debug.LogError("No graphics on " + _weaponIns.name);
         }
-
+        
 
         if (isLocalPlayer)
             Util.SetLayerRecursively(_weaponIns, LayerMask.NameToLayer(weaponLayerName));
-	}
+
+        currentWeapon.bullets = currentWeapon.maxBullets;
+        currentWeapon.mags = currentWeapon.maxMags;
+    }
 
     void UnequipWeapon()
     {
@@ -166,7 +186,6 @@ public class WeaponManager : NetworkBehaviour {
         pickupWeapon = _pickup.GetComponent<WeaponInfoScript>();
         if (_pickup.tag == PICKUP_TAG)
         {
-            Debug.Log("Pickup har ID " + pickupWeapon.weaponID + " och vapnet pa hand har ID " + currentWeapon.weaponID);
             if (pickupWeapon.weaponID == currentWeapon.weaponID)
             {
                 if (currentWeapon.mags >= currentWeapon.maxMags)
@@ -174,12 +193,18 @@ public class WeaponManager : NetworkBehaviour {
 
                 currentWeapon.mags = currentWeapon.maxMags;
                 StartCoroutine(Ammo_Coroutine(_pickup.gameObject));
-            }
-            else
-            {
-                Debug.Log("Gar alternativ vag");
-                FindCorrectID(pickupWeapon);
-            }
+            }            
+        }
+    }
+
+    void OnTriggerStay(Collider _pickup)
+    {
+        if (isActivating == true)
+        {
+            FindCorrectID(pickupWeapon);
+            isReloading = false;
+            StartCoroutine(Ammo_Coroutine(_pickup.gameObject));
+            globalActivating = true;
         }
     }
 
@@ -189,7 +214,6 @@ public class WeaponManager : NetworkBehaviour {
         {    
             if (weaponsList[i].weaponID == _pickup.weaponID)
             {
-                Debug.Log("The weapon lying on the ground is " + weaponsList[i].name);
                 EquipWeapon(weaponsList[i]);
             }
         }
@@ -206,6 +230,11 @@ public class WeaponManager : NetworkBehaviour {
     {
         _pickup.gameObject.GetComponent<Renderer>().enabled = _bool;
         _pickup.gameObject.GetComponent<BoxCollider>().enabled = _bool;
+    }
+
+    private IEnumerator Activate_Coroutine()
+    {
+        yield return new WaitForSeconds(1);
     }
 
 

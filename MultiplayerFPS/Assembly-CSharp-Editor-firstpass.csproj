@@ -71,7 +71,7 @@
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
-     <None Include="Assets\Editor Default Resources\Database Control Free\DCF_EditorData.txt" />
+     <None Include="Assets\assetstore\Editor Default Resources\Database Control Free\DCF_EditorData.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
@@ -109,7 +109,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
-     <None Include="Assets\Database Control Free\Resources\DCF_RuntimeData.txt" />
+     <None Include="Assets\assetstore\Database Control Free\Resources\DCF_RuntimeData.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
@@ -214,12 +214,6 @@
  <Reference Include="GUIAnimatorFREE">
  <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/assetstore/GUI Animator/GUI Animator FREE/Plugins/GUIAnimatorFREE.dll</HintPath>
  </Reference>
- <Reference Include="DatabaseControl">
- <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/Database Control Free/Scripts/DatabaseControl.dll</HintPath>
- </Reference>
- <Reference Include="DatabaseControlEditor">
- <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/Database Control Free/Scripts/Editor/DatabaseControlEditor.dll</HintPath>
- </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/kunge/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@1.0.7/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -234,6 +228,12 @@
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
  <HintPath>C:/Users/kunge/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/Editor/UnityEditor.Purchasing.dll</HintPath>
+ </Reference>
+ <Reference Include="DatabaseControl">
+ <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/assetstore/Database Control Free/Scripts/DatabaseControl.dll</HintPath>
+ </Reference>
+ <Reference Include="DatabaseControlEditor">
+ <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/assetstore/Database Control Free/Scripts/Editor/DatabaseControlEditor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
