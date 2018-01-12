@@ -17,7 +17,10 @@ public class PlayerShoot : NetworkBehaviour {
 	private LayerMask mask;
 
 	private PlayerWeapon currentWeapon;
-	private WeaponManager weaponManager;
+    private PlayerWeapon secondaryWeapon;
+    private PlayerWeapon switchWeapon;
+
+    private WeaponManager weaponManager;
     private SoundScript soundScript;
 
     private AudioClip audioClip;

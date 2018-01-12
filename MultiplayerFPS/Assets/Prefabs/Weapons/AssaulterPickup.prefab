@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33909479695492456}
   - component: {fileID: 23481245143724914}
   - component: {fileID: 54210356497041724}
-  - component: {fileID: 114547513622200432}
   - component: {fileID: 65644548036585838}
+  - component: {fileID: 114376666800038540}
   m_Layer: 0
   m_Name: AssaulterPickup
   m_TagString: Pickup
@@ -112,7 +112,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 8.826284, z: 2}
   m_Center: {x: 0.14662507, y: -0.18297218, z: -0.46279263}
---- !u!114 &114547513622200432
+--- !u!114 &114376666800038540
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -120,20 +120,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1694259075289598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e454dba44dc8a4083a6799b794ed0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9516d5f9f67051c4a835c7b0a1b50c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Raidbow
-  damage: 20
-  meleeDamage: 40
-  range: 150
-  meleeRange: 1
-  fireRate: 6
-  maxMags: 5
-  maxBullets: 21
-  weaponID: 5
-  bullets: 0
-  mags: 5
-  reloadTime: 2.1
-  meleeTime: 0.5
-  graphics: {fileID: 0}
+  name: 
+  weaponID: 0
+  mags: 0

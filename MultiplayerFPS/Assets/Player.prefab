@@ -1527,23 +1527,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponLayerName: Weapon
   weaponHolder: {fileID: 4000010810162276}
-  primaryWeapon:
-    name: Westerton
-    damage: 35
-    meleeDamage: 48
-    range: 100
-    meleeRange: 1
-    fireRate: 2.1
-    maxMags: 8
-    maxBullets: 6
-    weaponID: 1
-    shootEffect: {fileID: 82435826804540116}
-    meleeEffect: {fileID: 82576677920000972}
-    bullets: 20
-    mags: 6
-    reloadTime: 2.1
-    meleeTime: 0.5
-    graphics: {fileID: 1000013040046006, guid: 4efc91e45abe3e0409ad1a9e7f64d7fb, type: 2}
   playerUI: {fileID: 1160206637825454, guid: b135717c33bc8f64e8f5fc0953c22a7c, type: 2}
   weaponsList:
   - name: Westerton
@@ -1594,22 +1577,6 @@ MonoBehaviour:
     reloadTime: 2.1
     meleeTime: 0.5
     graphics: {fileID: 1000011829974120, guid: 9f09622c3363f8b45ba20a0b60661a8c, type: 2}
-  - name: Machiner
-    damage: 12
-    meleeDamage: 40
-    range: 65
-    meleeRange: 1.5
-    fireRate: 8
-    maxMags: 8
-    maxBullets: 32
-    weaponID: 4
-    shootEffect: {fileID: 0}
-    meleeEffect: {fileID: 0}
-    bullets: 0
-    mags: 1
-    reloadTime: 2.1
-    meleeTime: 0.5
-    graphics: {fileID: 1598370254181128, guid: 6d4c2ca4d923f7544873f062682bc928, type: 2}
   - name: Raidbow
     damage: 20
     meleeDamage: 40
@@ -1626,6 +1593,22 @@ MonoBehaviour:
     reloadTime: 2.1
     meleeTime: 0.5
     graphics: {fileID: 1237121334708558, guid: dd363b7009c647e40b87f41fa91b555f, type: 2}
+  - name: Flintfinger
+    damage: 40
+    meleeDamage: 21
+    range: 50
+    meleeRange: 0.75
+    fireRate: 10
+    maxMags: 8
+    maxBullets: 2
+    weaponID: 4
+    shootEffect: {fileID: 0}
+    meleeEffect: {fileID: 0}
+    bullets: 0
+    mags: 5
+    reloadTime: 2.1
+    meleeTime: 0.5
+    graphics: {fileID: 1444599367256194, guid: 00db480d837ddb340b6f7d8f343491d7, type: 2}
   audioClip:
   - {fileID: 8300000, guid: 245bf977415c3bb409a65eadfd9d2144, type: 3}
   - {fileID: 8300000, guid: 8c6fd6d63d7beb34b92f5423b18242f6, type: 3}

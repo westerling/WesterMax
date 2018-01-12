@@ -208,6 +208,12 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="DatabaseControl">
+ <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/assetstore/Database Control Free/Scripts/DatabaseControl.dll</HintPath>
+ </Reference>
+ <Reference Include="DatabaseControlEditor">
+ <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/assetstore/Database Control Free/Scripts/Editor/DatabaseControlEditor.dll</HintPath>
+ </Reference>
  <Reference Include="GETween">
  <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/assetstore/GUI Animator/Common/Plugins/GETween.dll</HintPath>
  </Reference>
@@ -228,12 +234,6 @@
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
  <HintPath>C:/Users/kunge/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/Editor/UnityEditor.Purchasing.dll</HintPath>
- </Reference>
- <Reference Include="DatabaseControl">
- <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/assetstore/Database Control Free/Scripts/DatabaseControl.dll</HintPath>
- </Reference>
- <Reference Include="DatabaseControlEditor">
- <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/assetstore/Database Control Free/Scripts/Editor/DatabaseControlEditor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\LoginMenu.cs" />
      <Compile Include="Assets\Scripts\MatchSettings.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\PickupInfo.cs" />
      <Compile Include="Assets\Scripts\pickupItem.cs" />
      <Compile Include="Assets\Scripts\PickupScript.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
@@ -222,6 +223,9 @@
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
+ <Reference Include="DatabaseControl">
+ <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/assetstore/Database Control Free/Scripts/DatabaseControl.dll</HintPath>
+ </Reference>
  <Reference Include="GETween">
  <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/assetstore/GUI Animator/Common/Plugins/GETween.dll</HintPath>
  </Reference>
@@ -233,9 +237,6 @@
  </Reference>
  <Reference Include="UnityEngine.Purchasing">
  <HintPath>C:/Users/kunge/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
- </Reference>
- <Reference Include="DatabaseControl">
- <HintPath>C:/Users/kunge/Documents/GitHub/https---github.com-westerling-MaJoDa.git/MultiplayerFPS/Assets/assetstore/Database Control Free/Scripts/DatabaseControl.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 23907626549345750}
   - component: {fileID: 114133336581555982}
   - component: {fileID: 95339961819690052}
-  - component: {fileID: 114168606914051046}
   m_Layer: 0
   m_Name: Assaulter
   m_TagString: Weapon
@@ -209,31 +208,6 @@ MonoBehaviour:
     type: 2}
   hitHumanEffectPrefab: {fileID: 1000013977882334, guid: c431a067d04dadb448a5dd4436d6e755,
     type: 2}
---- !u!114 &114168606914051046
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1237121334708558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e454dba44dc8a4083a6799b794ed0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Raidbow
-  damage: 20
-  meleeDamage: 40
-  range: 150
-  meleeRange: 1
-  fireRate: 6
-  maxMags: 5
-  maxBullets: 21
-  weaponID: 5
-  bullets: 0
-  mags: 5
-  reloadTime: 2.1
-  meleeTime: 0.5
-  graphics: {fileID: 0}
 --- !u!198 &198002783932195432
 ParticleSystem:
   m_ObjectHideFlags: 1

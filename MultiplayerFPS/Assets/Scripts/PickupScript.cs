@@ -7,7 +7,6 @@ using UnityEngine.Networking;
 public class PickupScript : NetworkBehaviour {
 
     private PlayerWeapon currentWeapon;
-    //private WeaponManager weaponManager;
     private PlayerShoot playerShoot;
     private WeaponManager weaponManager;
 

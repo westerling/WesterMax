@@ -9,47 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1025388435744858}
+  m_RootGameObject: {fileID: 1323525699241322}
   m_IsPrefabParent: 1
---- !u!1 &1025388435744858
+--- !u!1 &1323525699241322
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4731740935285676}
-  - component: {fileID: 33404695487375246}
-  - component: {fileID: 23106528936755602}
-  - component: {fileID: 54138473290771264}
-  - component: {fileID: 114327835142538742}
-  - component: {fileID: 65414393614407612}
+  - component: {fileID: 4161417044833498}
+  - component: {fileID: 33790971877836330}
+  - component: {fileID: 23209214394230794}
+  - component: {fileID: 54683134765472942}
+  - component: {fileID: 65404426759401346}
+  - component: {fileID: 114240022013212384}
   m_Layer: 0
-  m_Name: MachinerPickup1
-  m_TagString: Pickup
+  m_Name: FlintfingePickup
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4731740935285676
+--- !u!4 &4161417044833498
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025388435744858}
-  m_LocalRotation: {x: -0.22100723, y: -0, z: -0, w: 0.9752722}
-  m_LocalPosition: {x: 33.694, y: 4.399, z: -5.49}
-  m_LocalScale: {x: 0.0375, y: 0.1, z: 0.1}
+  m_GameObject: {fileID: 1323525699241322}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 33.61, y: 4.67, z: -5.47}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -25.536001, y: 0, z: 0}
---- !u!23 &23106528936755602
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23209214394230794
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025388435744858}
+  m_GameObject: {fileID: 1323525699241322}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2e2479258d0f5e3448eb7571deb4e21a, type: 2}
+  - {fileID: 2100000, guid: ee20ecc5a8ef1cf4794b21dd2b9b369e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,19 +78,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33404695487375246
+--- !u!33 &33790971877836330
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025388435744858}
-  m_Mesh: {fileID: 4300000, guid: ee2b61cffa043634598772dd61014614, type: 3}
---- !u!54 &54138473290771264
+  m_GameObject: {fileID: 1323525699241322}
+  m_Mesh: {fileID: 4300000, guid: a88743217a30ff248999cbfc2391ba13, type: 3}
+--- !u!54 &54683134765472942
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025388435744858}
+  m_GameObject: {fileID: 1323525699241322}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -100,40 +100,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65414393614407612
+--- !u!65 &65404426759401346
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025388435744858}
+  m_GameObject: {fileID: 1323525699241322}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.57, y: 0.7, z: 0.32}
-  m_Center: {x: 0, y: 0.18, z: 0}
---- !u!114 &114327835142538742
+  m_Size: {x: 1.5, y: 8.826284, z: 2}
+  m_Center: {x: 0.14662507, y: -0.18297218, z: -0.46279263}
+--- !u!114 &114240022013212384
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1025388435744858}
+  m_GameObject: {fileID: 1323525699241322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e454dba44dc8a4083a6799b794ed0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9516d5f9f67051c4a835c7b0a1b50c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Slayer
-  damage: 12
-  meleeDamage: 40
-  range: 65
-  meleeRange: 1.5
-  fireRate: 1
-  maxMags: 8
-  maxBullets: 32
   weaponID: 4
-  bullets: 0
-  mags: 8
-  reloadTime: 2.1
-  meleeTime: 0.5
-  graphics: {fileID: 0}
+  mags: 2

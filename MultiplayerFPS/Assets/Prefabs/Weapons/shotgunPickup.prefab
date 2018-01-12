@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33044212093490900}
   - component: {fileID: 23475429800664846}
   - component: {fileID: 54836445598920570}
-  - component: {fileID: 114684878756637348}
   - component: {fileID: 65195038607881216}
+  - component: {fileID: 114958322324111826}
   m_Layer: 0
   m_Name: shotgunPickup
   m_TagString: Pickup
@@ -37,9 +37,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1901067930029548}
-  m_LocalRotation: {x: -0.54230934, y: -0.4537627, z: -0.4537627, w: 0.54230934}
-  m_LocalPosition: {x: 44.45, y: 4.71, z: 31.75}
-  m_LocalScale: {x: 0.10000002, y: 0.10000002, z: 0.1}
+  m_LocalRotation: {x: -0.54230934, y: -0.4537627, z: -0.4537627, w: 0.5423094}
+  m_LocalPosition: {x: 46.668, y: 4.7, z: -20.479}
+  m_LocalScale: {x: 0.10000022, y: 0.10000027, z: 0.100000456}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -112,7 +112,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 8.826284, z: 2}
   m_Center: {x: 0.14662507, y: -0.18297218, z: -0.46279263}
---- !u!114 &114684878756637348
+--- !u!114 &114958322324111826
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -120,20 +120,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1901067930029548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e454dba44dc8a4083a6799b794ed0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9516d5f9f67051c4a835c7b0a1b50c03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Milian-2
-  damage: 90
-  meleeDamage: 31
-  range: 15
-  meleeRange: 1
-  fireRate: 4
-  maxMags: 2
-  maxBullets: 8
   weaponID: 2
-  bullets: 0
   mags: 2
-  reloadTime: 4
-  meleeTime: 0.5
-  graphics: {fileID: 0}

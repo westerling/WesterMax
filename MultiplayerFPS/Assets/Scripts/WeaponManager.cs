@@ -23,9 +23,12 @@ public class WeaponManager : NetworkBehaviour {
     public AudioClip[] audioClip;
 
     private PlayerWeapon currentWeapon;
-    private WeaponInfoScript pickupWeapon;
-    private WeaponGraphics currentGraphics;
+    private PlayerWeapon secondaryWeapon;
+    private PlayerWeapon extraWeapon;
 
+    private PickupInfo pickupWeapon;
+    private WeaponGraphics currentGraphics;
+    
     private const string PICKUP_TAG = "Pickup";
     private const string WEAPON_TAG = "Weapon";
 
@@ -37,6 +40,7 @@ public class WeaponManager : NetworkBehaviour {
 	void Start ()
 	{
 		EquipWeapon(weaponsList[0]);
+        secondaryWeapon = weaponsList[1];
         playerUI.GetComponents<Text>();
     }
 
@@ -50,6 +54,20 @@ public class WeaponManager : NetworkBehaviour {
         {
             isActivating = false;
         }
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            if (secondaryWeapon != null)
+            {
+                if (!isReloading)
+                {
+                    StopCoroutine(Reload_Coroutine());
+                    extraWeapon = currentWeapon;
+                    EquipWeapon(secondaryWeapon);
+                    secondaryWeapon = extraWeapon;
+                }
+            }
+        }
+
     }
 
     void LateUpdate()
@@ -74,7 +92,7 @@ public class WeaponManager : NetworkBehaviour {
 
     void EquipWeapon (PlayerWeapon _weapon)
 	{
-        if (currentWeapon != null)
+        if (currentWeapon != null)            
             UnequipWeapon();
 
 		currentWeapon = _weapon;
@@ -92,8 +110,8 @@ public class WeaponManager : NetworkBehaviour {
         if (isLocalPlayer)
             Util.SetLayerRecursively(_weaponIns, LayerMask.NameToLayer(weaponLayerName));
 
-        currentWeapon.bullets = currentWeapon.maxBullets;
-        currentWeapon.mags = currentWeapon.maxMags;
+        currentWeapon.bullets = _weapon.bullets;
+        currentWeapon.mags = _weapon.mags;
     }
 
     void UnequipWeapon()
@@ -128,11 +146,11 @@ public class WeaponManager : NetworkBehaviour {
 
         CmdOnReload();
 
+        currentWeapon.mags--;
+
         yield return new WaitForSeconds(currentWeapon.reloadTime);
 
         currentWeapon.bullets = currentWeapon.maxBullets;
-
-        currentWeapon.mags--;
 
         isReloading = false;
     }
@@ -183,7 +201,7 @@ public class WeaponManager : NetworkBehaviour {
 
     void OnTriggerEnter(Collider _pickup)
     {
-        pickupWeapon = _pickup.GetComponent<WeaponInfoScript>();
+        pickupWeapon = _pickup.GetComponent<PickupInfo>();
         if (_pickup.tag == PICKUP_TAG)
         {
             if (pickupWeapon.weaponID == currentWeapon.weaponID)
@@ -208,7 +226,7 @@ public class WeaponManager : NetworkBehaviour {
         }
     }
 
-    void FindCorrectID(WeaponInfoScript _pickup)
+    void FindCorrectID(PickupInfo _pickup)
     {
         for (int i = 0; i < weaponsList.Length; i++)
         {    
