@@ -13,8 +13,8 @@ public class WeaponInfoScript : MonoBehaviour{
     public int maxMags;
     public int maxBullets;
     public int weaponID;
-//    public AudioSource shootEffect;
-//    public AudioSource meleeEffect;
+    public AudioSource shootEffect;
+    public AudioSource meleeEffect;
 
     [HideInInspector]
     public int bullets;

@@ -1530,7 +1530,7 @@ MonoBehaviour:
   playerUI: {fileID: 1160206637825454, guid: b135717c33bc8f64e8f5fc0953c22a7c, type: 2}
   weaponsList:
   - name: Westerton
-    damage: 35
+    damage: 23
     meleeDamage: 48
     range: 100
     meleeRange: 1
@@ -1548,7 +1548,7 @@ MonoBehaviour:
   - name: Milian-2
     damage: 90
     meleeDamage: 31
-    range: 15
+    range: 10
     meleeRange: 1
     fireRate: 4
     maxMags: 2
@@ -1558,7 +1558,7 @@ MonoBehaviour:
     meleeEffect: {fileID: 0}
     bullets: 0
     mags: 2
-    reloadTime: 4
+    reloadTime: 2.1
     meleeTime: 0.5
     graphics: {fileID: 1000011055358402, guid: 1cc8f1ece1118b542abfe41001a80945, type: 2}
   - name: JW Model-91

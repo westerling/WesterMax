@@ -151,8 +151,10 @@ public class PlayerShoot : NetworkBehaviour {
            // soundScript.playSound(3);
            
             AudioSource audio = GetComponent<AudioSource>();
-            audio.clip = weaponManager.GetCurrentAudioClip(2);
-            audio.Play();
+
+        audio.clip = weaponManager.GetCurrentAudioClip(2);   
+
+         audio.Play();
         
         weaponManager.GetCurrentGraphics().muzzleFlash.Play();
             CmdOnShoot();
@@ -184,8 +186,7 @@ public class PlayerShoot : NetworkBehaviour {
         {
             return;
         }
-        /*soundScript.playSound(rnd.Next(0, 2));*/
-        AudioSource audio = GetComponent<AudioSource>();
+        AudioSource audio = GetComponent<AudioSource>();        
         audio.clip = weaponManager.GetCurrentAudioClip(rnd.Next(0, 1));
         audio.Play();
 
@@ -232,31 +233,4 @@ public class PlayerShoot : NetworkBehaviour {
             currentWeapon.mags++;
         return true;    
     }
-
-    /*
-    void OnTriggerEnter(Collider _pickup)
-    {
-        if (_pickup.tag == PICKUP_TAG)
-        {
-            if (currentWeapon.mags >= currentWeapon.maxMags)
-                return;
-
-            currentWeapon.mags++;
-            StartCoroutine(Ammo_Coroutine(_pickup.gameObject));
-        }
-    }
-
-    private IEnumerator Ammo_Coroutine(GameObject _pickup)
-    {
-        DisableOrEnableComponents(false, _pickup);
-        yield return new WaitForSeconds(30);
-        DisableOrEnableComponents(true, _pickup);
-    }
-
-    void DisableOrEnableComponents(bool _bool, GameObject _pickup)
-    {
-        _pickup.gameObject.GetComponent<Renderer>().enabled = _bool;
-        _pickup.gameObject.GetComponent<BoxCollider>().enabled = _bool;
-    }
-    */
 }

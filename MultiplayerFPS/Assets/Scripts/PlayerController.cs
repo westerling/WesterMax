@@ -12,10 +12,7 @@ public class PlayerController : MonoBehaviour {
     private float jump_force = 500f;
 
     private float VerticalVelocity;
-    /*
-    [SerializeField]
-    private float gravity = 14.0f;
-    */
+
     [SerializeField]
     private LayerMask enviromentMask;
 

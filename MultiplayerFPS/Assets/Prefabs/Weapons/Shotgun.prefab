@@ -229,6 +229,8 @@ MonoBehaviour:
   maxMags: 2
   maxBullets: 8
   weaponID: 2
+  shootEffect: {fileID: 0}
+  meleeEffect: {fileID: 0}
   bullets: 0
   mags: 2
   reloadTime: 4

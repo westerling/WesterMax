@@ -97,6 +97,11 @@ public class WeaponManager : NetworkBehaviour {
 
 		currentWeapon = _weapon;
 
+        if (currentWeapon.bullets <= 0)
+        {
+            currentWeapon.bullets = currentWeapon.maxBullets;
+        }
+
 		GameObject _weaponIns = (GameObject)Instantiate(_weapon.graphics, weaponHolder.position, weaponHolder.rotation);
 		_weaponIns.transform.SetParent(weaponHolder);
 
@@ -209,9 +214,25 @@ public class WeaponManager : NetworkBehaviour {
                 if (currentWeapon.mags >= currentWeapon.maxMags)
                     return;
 
-                currentWeapon.mags = currentWeapon.maxMags;
+                currentWeapon.mags = currentWeapon.mags + pickupWeapon.mags;
+                if(currentWeapon.mags > currentWeapon.maxMags)
+                {
+                    currentWeapon.mags = currentWeapon.maxMags;
+                }
                 StartCoroutine(Ammo_Coroutine(_pickup.gameObject));
-            }            
+            }
+            if (pickupWeapon.weaponID == secondaryWeapon.weaponID)
+            {
+                if (secondaryWeapon.mags >= secondaryWeapon.maxMags)
+                    return;
+
+                secondaryWeapon.mags = secondaryWeapon.mags + pickupWeapon.mags;
+                if (secondaryWeapon.mags > secondaryWeapon.maxMags)
+                {
+                    secondaryWeapon.mags = secondaryWeapon.maxMags;
+                }
+                StartCoroutine(Ammo_Coroutine(_pickup.gameObject));
+            }
         }
     }
 
