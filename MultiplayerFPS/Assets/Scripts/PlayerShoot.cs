@@ -68,7 +68,7 @@ public class PlayerShoot : NetworkBehaviour {
 
         if(currentWeapon != null)
            {     
-	    	if (currentWeapon.fireRate <= 0f)
+	    	if (currentWeapon.fireRate <= 0f && currentWeapon.bullets > 0)
 	    	{
 		    	if (Input.GetButtonDown("Fire1"))
 			    {
@@ -127,7 +127,6 @@ public class PlayerShoot : NetworkBehaviour {
         }
         if (!shot)
             soundScript.playSound(4);
-//        soundScript.playSound(rnd.Next(0, 2));
 
         Destroy(_hitEffect, 2f);
     }
