@@ -72,6 +72,7 @@
      <Compile Include="Assets\GE Common Assets\Scripts\GE_UIResponder.cs" />
      <Compile Include="Assets\Scripts\CameraFacingBillboard.cs" />
      <Compile Include="Assets\Scripts\DataTranslator.cs" />
+     <Compile Include="Assets\Scripts\DropDownMenuScript.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HostGame.cs" />
      <Compile Include="Assets\Scripts\JoinGame.cs" />

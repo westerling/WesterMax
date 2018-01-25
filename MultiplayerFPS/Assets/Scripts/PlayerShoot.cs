@@ -9,6 +9,7 @@ public class PlayerShoot : NetworkBehaviour {
 
 	private const string PLAYER_TAG = "Player";
     private const string PICKUP_TAG = "Pickup";
+    private const string HEAD_TAG = "Head";
 
     [SerializeField]
 	private Camera cam;
@@ -164,10 +165,17 @@ public class PlayerShoot : NetworkBehaviour {
             {
                 if (_hit.collider.tag == PLAYER_TAG)
                 {
+                Debug.Log("PLAYER");
                     CmdPlayerHit(_hit.collider.name, currentWeapon.damage, transform.name);
                     CmdOnHit(_hit.point, _hit.normal, true, true);
                 }
-                else
+                else if (_hit.collider.tag == HEAD_TAG)
+                  {
+                Debug.Log("OJ DÅ HUVUDET JAG SA OJDÅHUVUDET");
+                CmdPlayerHit(_hit.collider.name, currentWeapon.damage * 2, transform.name);
+                CmdOnHit(_hit.point, _hit.normal, true, true);
+                  }
+              else
                 {
                     CmdOnHit(_hit.point, _hit.normal, false, true);
                 }
